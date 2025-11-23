@@ -1,0 +1,885 @@
+****************************************************************
+
+#include <stdio.h>
+
+int main() {
+    printf("Olá, mundo!\n");
+    return 0;
+}
+
+****************************************************************
+
+//Exemplo atribuicao automatica com numero inteiro - int
+
+#include <stdio.h>
+int main()
+{
+    int numA = 13, numB = 2;
+    printf("%i + %i = %i",numA, numB, numA + numB);
+
+    return 0;
+}
+
+****************************************************************
+
+//Exemplo atribuicao automatica com numero com virgula - float
+// Numero com virgula com dois digitos apos a virgula
+
+#include <stdio.h>
+int main()
+{
+    float numA = 13, numB = 2;
+    printf("%.2f / %.2f = %.2f",numA, numB, numA / numB);
+
+    return 0;
+}
+
+***************************************************************
+
+//Exemplo atribuicao automatica com varias numeros apos a virgula
+
+#include <stdio.h>
+int main()
+{
+    float numA = 13, numB = 2;
+    printf("%f / %f = %f",numA, numB, numA / numB);
+
+    return 0;
+}
+
+**************************************************************
+//Exemplo inserção do usuario - divisao
+
+#include <stdio.h>
+
+int main()
+{
+   int numA, numB;
+   printf ("Digite o 1º numero: ");//Funcao de saida de dados
+   scanf("%i",&numA);//Funcao de entrada de dado
+   printf ("Digite o 2º numero: ");//Funcao de saida de dados
+   scanf("%i",&numB);//Funcao de entrada de dado
+   printf("%i / %i = %i",numA, numB, numA / numB);
+       
+    return 0;
+}
+
+************************************************************
+//Exemplo inserção do usuario - soma
+
+#include <stdio.h>
+int main()
+{
+   int numA, numB;
+   printf ("Digite o 1º numero: ");//Funcao de saida de dados
+   scanf("%i",&numA);
+   printf ("Digite o 2º numero: ");//Funcao de saida de dados
+   scanf("%i",&numB);
+   printf("%i + %i = %i",numA, numB, numA + numB);
+       
+    return 0;
+}
+
+************************************************************
+// Insercao de dados em formulario 
+
+#include <stdio.h>
+
+int main() {
+    int idade = 25;
+    float altura = 1.75;
+    char inicial = 'J';
+    
+    printf("Idade: %d anos\n", idade);
+    printf("Altura: %.2f metros\n", altura);
+    printf("Inicial: %c\n", inicial);
+    
+    return 0;
+}
+
+*************************************************************
+// Exemplo inserção dados usuario - ligar item, preço e categoria
+
+#include <stdio.h>
+
+int main() {
+    int numero;
+    float preco;
+    char categoria;
+    
+    printf("Digite um número: ");
+    scanf("%d", &numero);
+    
+    printf("Digite o preço: ");
+    scanf("%f", &preco);
+    
+    printf("Digite a categoria: ");
+    scanf(" %c", &categoria);  // espaço antes de %c é importante!
+    
+    printf("Número: %d, Preço: %.2f, Categoria: %c\n", 
+           numero, preco, categoria);
+    
+    return 0;
+}
+
+********************************************
+// Exemplo formulário para apresentar Nome e idade
+
+
+#include <stdio.h>
+
+int main() {
+    char nome[50];
+    int idade;
+
+    printf("Digite seu nome: ");
+    scanf("%49s", nome); // lê uma string (até espaço)
+    
+    printf("Digite sua idade: ");
+    scanf("%d", &idade);
+
+    printf("\n--- Dados Informados ---\n");
+    printf("Nome: %s\n", nome);
+    printf("Idade: %d anos\n", idade);
+
+    return 0;
+}
+
+********************************************
+// Calcular idade 
+
+#include <stdio.h>
+
+int main() {
+    int diaN, mesN, anoN;
+    int diaA, mesA, anoA;
+    int idade;
+
+    printf("Digite sua data de nascimento (dd mm aaaa): ");
+    scanf("%d %d %d", &diaN, &mesN, &anoN);
+
+    printf("Digite a data atual (dd mm aaaa): ");
+    scanf("%d %d %d", &diaA, &mesA, &anoA);
+
+    idade = anoA - anoN;
+
+    // Ajusta a idade se ainda não fez aniversário no ano atual
+    if (mesA < mesN || (mesA == mesN && diaA < diaN)) {
+        idade--;
+    }
+
+    printf("Voce tem %d anos.\n", idade);
+
+    return 0;
+}
+
+**********************************
+// Exemplo formulário para apresentar Nome e calcular idade - Trabalho 09/09/2025
+
+#include <stdio.h>
+
+int main() {
+    char nome[50];
+    int diaN, mesN, anoN;
+    int diaA, mesA, anoA;
+    int idade;
+
+    printf("Digite seu nome: ");
+    scanf(" %[^\n]", nome); // lê até encontrar ENTER (nome completo)
+
+    printf("Digite sua data de nascimento (dd mm aaaa): ");
+    scanf("%d %d %d", &diaN, &mesN, &anoN);
+
+    printf("Digite a data atual (dd mm aaaa): ");
+    scanf("%d %d %d", &diaA, &mesA, &anoA);
+
+    idade = anoA - anoN;
+
+    // Ajusta a idade se ainda não fez aniversário no ano atual
+    if (mesA < mesN || (mesA == mesN && diaA < diaN)) {
+        idade--;
+    }
+
+    printf("\n%s, voce tem %d anos.\n", nome, idade);
+
+    return 0;
+}
+
+*******************************************************
+// Exemplo formulário para apresentar Nome e idade
+
+#include <stdio.h>
+
+int main() {
+    char nome[50];
+    int idade;
+
+    printf("Digite seu nome: ");
+    scanf("%49s", nome); // lê uma string (até espaço)
+    
+    printf("Digite sua idade: ");
+    scanf("%d", &idade);
+
+    printf("\n--- Dados Informados ---\n");
+    printf("Nome: %s\n", nome);
+    printf("Idade: %d anos\n", idade);
+
+    return 0;
+}
+
+******************************************
+
+
+AP3 - Estrutura Sequencial
+1.Faça um programa em C que dado dois valores quaisquer, inteiros, informados pelo usuário, apresente duas operações básicas de sua preferência.
+•	Usar pelo menos 3 variáveis.
+•	Apresentar o resultado mostrando os números digitados, o resultado além das operações.
+•	Exemplo de saída: 13 + 5 = 18
+
+
+//Exemplo inserção do usuario - divisao
+
+#include <stdio.h>
+int main()
+{
+   int numA, numB;
+   printf ("Digite o 1º numero: ");//Funcao de saida de dados
+   scanf("%i",&numA);
+   printf ("Digite o 2º numero: ");//Funcao de saida de dados
+   scanf("%i",&numB);
+   printf("%i / %i = %i",numA, numB, numA / numB);
+       
+    return 0;
+}
+
+***********************************************
+
+#include <stdio.h>
+int main()
+{
+   int numA, numB;
+   printf ("Digite o 1º numero: ");//Funcao de saida de dados
+   scanf("%i",&numA);
+   printf ("Digite o 2º numero: ");//Funcao de saida de dados
+   scanf("%i",&numB);
+   printf ("Digite o 3º numero: ");//Funcao de saida de dados
+   scanf("%i",&numB);
+
+   printf("%i + %i + %i = %i",numA, numB, numC numA + numB + numC);
+       
+    return 0;
+}
+
+
+******************************************************
+// Errado com três variáveis
+
+#include <stdio.h>
+
+int main() {
+    int numA, numB, numC;
+
+    printf("Digite o 1º numero: ");
+    scanf("%i", &numA);
+
+    printf("Digite o 2º numero: ");
+    scanf("%i", &numB);
+
+    printf("Digite o 3º numero: ");
+    scanf("%i", &numC); 
+
+    printf("%i + %i + %i = %i\n", numA, numB, numC, numA + numB + numC);
+
+    return 0;
+}
+
+
+**********************************************************
+
+/******************************************************************************
+
+AP3 - Estrutura Sequencial
+
+1.Faça um programa em C que dado dois valores quaisquer, inteiros, informados pelo usuário, apresente duas operações básicas de sua preferência.
+•	Usar pelo menos 3 variáveis.
+•	Apresentar o resultado mostrando os números digitados, o resultado além das operações.
+•	Exemplo de saída: 13 + 5 = 18
+*******************************************************************************/
+#include <stdio.h>
+
+int main() {
+    int numA, numB;  // duas variáveis de entrada
+    int resultado;   // variável para armazenar a soma
+
+    // Primeira soma
+    printf("Digite o 1º numero: ");
+    scanf("%i", &numA);
+
+    printf("Digite o 2º numero: ");
+    scanf("%i", &numB);
+
+    resultado = numA + numB;
+    printf("%i + %i = %i\n", numA, numB, resultado);
+
+    // Nova soma usando o resultado como terceira variável
+    printf("Digite outro numero para somar ao resultado anterior: ");
+    scanf("%i", &numB);  // reutilizando numB como nova entrada
+
+    resultado = resultado + numB;
+    printf("Resultado anterior + %i = %i\n", numB, resultado);
+
+    return 0;
+}
+**********************************************************
+
+/******************************************************************************
+AP3 - Estrutura Sequencial
+
+2.Faça um programa em C que dados dois valores quaisquer, reais, informados pelo usuário, apresente a média destes números.
+•	Usar pelo menos 2 variáveis.
+•	Apresentar o resultado com 1 casa decimal.
+•	Exemplo de saída: "A média entre <numA> e <numB> é <média>.
+*******************************************************************************/
+#include <stdio.h>
+
+int main() {
+    float numA, numB;  // duas variáveis para os números reais
+    float media;       // variável para armazenar a média
+
+    // Entrada de dados
+    printf("Digite o 1º numero: ");
+    scanf("%f", &numA);
+
+    printf("Digite o 2º numero: ");
+    scanf("%f", &numB);
+
+    // Cálculo da média
+    media = (numA + numB) / 2;
+
+    // Saída formatada com 1 casa decimal
+    printf("A média entre %.0f e %.0f é %.1f\n", numA, numB, media);
+
+    return 0;
+}
+
+
+/******************************************************************************
+AP3 - Estrutura Sequencial
+
+3.Faça um programa em C que dado um número qualquer, inteiro, informado pelo usuário ou não, apresente seu sucessor e seu antecessor.
+•	Usar pelo menos 1 variável.
+•	Mostrar o número, seu sucessor e seu antecessor.
+•	Exemplo de saída: "Número digitado <num>. Sucessor: <suce>. Antecessor: <antec>".
+*******************************************************************************/
+#include <stdio.h>
+
+int main() {
+    int num;  // variável para armazenar o número
+
+    // Entrada de dados
+    printf("Digite um numero inteiro: ");
+    scanf("%d", &num);
+
+    // Saída mostrando número, sucessor e antecessor
+    printf("Número digitado: %d. Sucessor: %d. Antecessor: %d\n", num, num + 1, num - 1);
+
+    return 0;
+}
+
+/******************************************************************************
+AP3 - Estrutura Sequencial
+
+4.Faça um programa em C que informe quanto é um número qualquer, inteiro e informado pelo usuário, elevado a 2.
+•	Usar pelo menos 1 variável.
+•	Exemplo de saída: "O número <num> elevado a 2 é <resultado>".
+*******************************************************************************/
+#include <stdio.h>
+
+int main() {
+    int num;       // variável para armazenar o número
+    int resultado; // variável para armazenar o quadrado
+
+    // Entrada de dados
+    printf("Digite um numero inteiro: ");
+    scanf("%d", &num);
+
+    // Cálculo do quadrado
+    resultado = num * num;
+
+    // Saída
+    printf("O número %d elevado a 2 é %d\n", num, resultado);
+
+    return 0;
+}
+
+********************************************
+
+// Exemplo condicional simples - Aula 16set
+#include <stdio.h>
+
+int main ()
+{
+    int num;
+    printf ("Digite um nº: ");
+    scanf ("%i", &num);
+    if (num > 21){
+        printf ("Triangulo");
+    }
+    if (num < 21){
+        printf ("Quadrado");
+    }
+    if (num == 21){
+          printf ("Sao iguais");
+            }
+        return 0;
+}
+
+************************************************
+
+// Exemplo condicional composta
+#include <stdio.h>
+int main ()
+{
+    int num;
+    printf ("Digite um nº: ");// printf - função de saida
+    scanf ("%i", &num);//função de entrada - responsavel em armzenar o que usuario digita
+    if (num > 21){
+        printf ("Triangulo");
+    }
+    else{ //função de entrada - responsavel em armzenar o que usuario digita
+    printf ("Quadrado");
+    }
+        return 0;
+}
+
+************************************************
+
+// Exemplo condicional aninhada
+#include <stdio.h>
+int main ()
+{
+    int num;
+    printf ("Digite um nº: ");// printf - função de saida
+    scanf ("%i", &num);//função de entrada - responsavel em armzenar o que usuario digita
+    if (num > 21){
+        printf ("Triangulo");
+    }
+    else{ //função de entrada - responsavel em armzenar o que usuario digita
+    if(num == 21){
+   printf("Sao iguais");
+	}
+	else{
+	printf ("Quadrado");
+    }
+    }
+        return 0;
+}
+
+**********************************************************
+
+// Exemplo Switch
+#include <stdio.h>
+int main ()
+{
+    int num;
+    printf ("Digite um nº: ");// printf - função de saida
+    scanf ("%i", &num);//função de entrada - armazenar responsavel em armzenar o que usuario digita
+    switch (num) {
+	     case 21:
+   printf("Sao iguais");
+   break;
+   case 30:
+   printf ("Triangulo");
+   break;
+   caso 10:
+   printf ("Quadrado");
+   break;
+   }
+   default:
+   printf ("Valor invalido");
+	}
+	
+	return 0;
+}
+
+******************************************************************
+
+// Exemplo Switch
+#include <stdio.h>
+
+int main() {
+    int num;
+    printf("Digite um nº: "); // printf - função de saída
+    scanf("%d", &num);        // scanf - função de entrada, responsável por armazenar o que o usuário digita
+    
+    switch (num) {
+        case 21:
+            printf("São iguais");
+            break;
+        case 30:
+            printf("Triângulo");
+            break;
+        case 10:
+            printf("Quadrado");
+            break;
+        default:
+            printf("Valor inválido");
+    }
+    
+    return 0;
+}
+
+**************************************************************
+// Exemplo Switch com Variaveis
+#include <stdio.h>
+int main() 
+{
+    int num;
+    printf("Digite um nº: "); 
+    scanf("%i", &num);     
+    switch (num) {
+        case 21:
+        printf("São iguais");
+        break;
+        case 30:
+        printf("Triângulo");
+        break;
+        case 10:
+        printf("Quadrado");
+        break;
+    default:
+    printf("Valor inválido");
+    }
+    return 0;
+}
+
+********************************************************************
+
+// Exemplo Switch com Caracteres
+#include <stdio.h>
+int main() 
+{
+    char cod;
+    printf ("Escolha entre A - B - C:"); 
+    scanf("%c", &cod);     
+    switch(cod){
+        case 'A':
+        printf ("Amor");
+        break;
+        case 'a':
+        printf ("Amor");
+        break;
+        case 'B':
+        case 'b':
+        printf ("Beijo");
+        break;
+        case 'C':
+        case 'c':
+        printf("Carinho");
+        break;
+        default:
+    printf ("Valor inválido");
+    }
+    return 0;
+}
+
+********************************************************
+/* 
+Faça um programa em C que dado um valor interio informado pelo usuario diga se é par ou impar.
+*/
+//Exemplo inserção do usuario - divisao
+
+#include <stdio.h>
+int main()
+{
+   int num;
+   printf ("Digite um numero: ");//Funcao de saida de dados
+   scanf("%i", &num);
+  if(num % 2==0) {
+      printf ("par");
+  }
+  else{
+      printf("impar");
+  }
+ 
+    return 0;
+}
+
+***************************************
+
+/* 
+Faça um programa em C que dado um valor interio informado pelo usuario diga se é par ou impar.
+*/
+//Exemplo inserção do usuario - divisao
+
+#include <stdio.h>
+int main()
+{
+   int num;
+   printf ("Digite um numero: ");//Funcao de saida de dados
+   scanf("%i", &num);
+  if(num % 2==1) {
+      printf ("impar");
+  }
+  else{
+      printf("par");
+  }
+ 
+    return 0;
+}
+
+***************************************
+
+
+//Exemplo while controle automatico - imprimir na tela n. de 1 a 10
+#include <stdio.h>
+int main()
+{
+   int num = 1;
+   while (num <=10) {
+       printf ("%i\n", num);//pular uma linha
+       num = num+1;
+   }
+ 
+    return 0;
+}
+****************************************************
+//Exemplo while controle automatico - imprimir na tela n. de 1 a 10
+#include <stdio.h>
+int main()
+{
+   int num = 10;
+   while (num >=1) {
+       printf ("%i\n", num);//pular uma linha
+       num = num-1;
+   }
+ 
+    return 0;
+}
+
+************************
+//Exemplo while controle automatico - imprimir na tela n. de 1 a 10
+#include <stdio.h>
+int main()
+{
+   int num = 10, acum=0;
+   while (num >=1) {
+       printf ("%i\n", num);//pular uma linha
+       num = num-1;//contador
+       acum = acum+num;
+   }
+   printf ("Soma: %i", acum);
+    return 0;
+}
+
+********************************
+
+//Exemplo while controle usuário - imprimir na tela n. de 1 a 10
+#include <stdio.h>
+int main()
+{
+   int num=0;
+   while (num!=-1){
+       printf ("Digite um nº: ");
+       scanf ("%i", &num);
+       printf ("%i\n" ,num);
+    }
+   return 0;
+}
+
+*******************************
+
+//Exemplo do- while controle automatico - imprimir na tela n. de 1 a 10
+#include <stdio.h>
+int main()
+{
+   int num = 0, acum=0;
+   do{
+       printf ("%i \n", num);
+       acum=acum+num; //acumula os valores digitados
+       num = num+1; // conta nº repeticoes
+   }while (num <= 10);
+    printf ("Soma: %i", acum);
+   return 0;
+}
+
+*********************************************************
+
+//Exemplo for
+#include <stdio.h>
+int main()
+{
+   int num, acum=0;
+   for (num=0; num<=10; num++){
+       printf ("%i \n", num);
+       acum=acum+num; // acumula valores 
+   }
+   printf ("Soma: %i",acum);
+   return 0;
+}
+
+******************************************************
+
+//Exemplo do-while controle automatico
+#include <stdio.h>
+int main()
+{
+   int num=0, acum=0;
+   do{
+         printf ("%i \n", num);
+       acum=acum+num; // acumula os valores digitados
+       num = num+1; // conta o nº de repetições
+   }while (num <= 10);
+   printf ("Soma: %i",acum);
+   return 0;
+}
+
+**************************************
+
+// Exemplo do-while: Sequência decrescente de 10 a 1
+#include <stdio.h>
+
+int main()
+{
+     int num = 10;
+    int acum = 0;
+
+    do {
+       printf("%i \n", num);
+        acum = acum + num; 
+        num = num - 1; 
+       } while (num >= 1); 
+      printf("Soma: %i \n", acum);
+    return 0;
+}
+
+************************************
+//Exemplo for controle automatico 1 a 10
+#include <stdio.h>
+int main()
+{
+   int num=0, acum=0;
+   for (num=0; num<=10; num++){
+         printf ("%i \n", num);
+       acum=acum+num; // acumula os valores digitados
+   }
+   printf ("Soma: %i",acum);
+   return 0;
+}
+
+***********************************************
+//Exemplo for controle automatico 10 a 1
+#include <stdio.h>
+int main()
+{
+   int num = 10;
+    int acum = 0;
+   for (num=0; num<=10; num++){
+         printf ("%i \n", num);
+       acum=acum+num; // acumula os valores digitados
+   }
+   printf ("Soma: %i",acum);
+   return 0;
+}
+
+***********************************************
+// Exemplo do-while: Sequência decrescente de 10 a 1
+#include <stdio.h>
+
+int main()
+{
+     int num, acum = 0;
+ for (num=10; num>=1; num--){
+       printf("%i \n", num);
+        acum = acum + num; 
+        num = num - 1; 
+       } while (num >= 1); 
+      printf("Soma: %i \n", acum);
+    return 0;
+}
+
+**********************************************
+28/10/2025
+
+// Exemplo de vetor
+#include <stdio.h>
+int main()
+{
+    int num[10]; // declaração de variável composta
+    int i;
+    for(i=0; i<10; i++){//coleta os dados
+        printf ("Digite um nº: ");
+        scanf ("%i",&num[i]);
+    }
+    printf ("*** Lista ***\n");//mensagem orientadora
+    for(i=0; i<10; i++){//imprime os dados
+    printf ("%i \n", num[i]);
+}
+
+    return 0;
+}
+
+************************************************
+// Exemplo de matriz
+#include <stdio.h>
+int main()
+{
+    int num[3][3]; // declaração de variável bidimensional
+    int i, j;
+    for (i=0; i<3; i++){//controla nº de linhas
+        for(j=0; j<3; j++){//controla nº e colunas
+        printf ("Digite um nº: ");
+        scanf ("%i", &num[i][j]);
+    }
+    }
+    printf ("*** Matriz Montada ***\n");//mensagem orientadora
+    for(i=0; i<3; i++){//imprime os dados
+   for (j=0; j<3; j++){
+    printf ("%i ",num[i][j]);
+}
+printf("\n");
+}
+    return 0;
+}
+
+*************************************************
+PARAMETRO - EXEMPLO
+
+#include <stdio.h>
+
+
+// Função que verifica se um numero é par ou impar
+void verificarParImpar(int numero) {
+    if (numero % 2 == 0) {
+        printf("%d é par\n", numero);
+    } else {
+        printf("%d é impar\n", numero);
+        }
+}
+
+int main() {
+   int num = 10;
+   
+   // Chama a função 'verificarParImpar' passando 'num'
+   verificarParImpar(num);
+   
+   num = 7;
+   verificarParImpar(num);
+   
+    return 0;
+}
+
+********************************************
+
+#include <stdio.h>
+// Definição da função que calcula o quadrado de um número
+int quadrado (int numero) {
+       return numero * numero);
+}
+       
+int main() {
+    int x = 5;
+   int resultado = quadrado (x); // Chama a função quadrado
+   printf("O quadrdo de %d é %d\n", x resultado); // Imprime o resultado
+   return 0;
+}
